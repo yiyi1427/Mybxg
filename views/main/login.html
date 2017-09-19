@@ -36,6 +36,7 @@
     </div>
 
     <script src="/public/assets/jquery/jquery.min.js"></script>
+    <script src="/public/assets/jquery-cookie/jquery.cookie.js"></script>
     <script src="/public/assets/bootstrap/js/bootstrap.min.js"></script>
     <script>
         $("#loginBtn").on('click', function () {
@@ -46,6 +47,10 @@
                 dataType: 'json',
                 success: function (data) {
                     if (data.code == 200) {
+                        //登录信息存储到cookie中
+                        $.cookie('logInfo', JSON.stringify(data.result), {
+                            path: '/'
+                        });
                         location.href = '/main/index';
                     }
                 }
