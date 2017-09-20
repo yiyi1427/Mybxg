@@ -1,7 +1,8 @@
 define([
 	'jquery',
+	'template',
 	'cookie'
-], function ($) {
+], function ($, template) {
 	//NProgress.start();
 
 	//NProgress.done();
@@ -27,15 +28,25 @@ define([
 	})
 	//验证是否登录了
 	var flag = $.cookie('PHPSESSID');
-	if (!flag) {
+	if (!flag && location.pathname != '/main/login') {
 		location.href = '/main/login';
 	}
-	//填充头像信息
+	//填充头像信息(arttemplate实现)
+	/* 	var loginInfo = $.cookie('logInfo');
+		//console.log(loginInfo);
+		loginInfo = loginInfo && JSON.parse(loginInfo);
+		//console.log(loginInfo.tc_name);
+		var tep = '<div class="avatar img-circle"><img src="{{tc_avatar}}"></div><h4>{{tc_name}}</h4>';
+		console.log(tc_name);
+		var html = template.render(tep, loginInfo);
+		$(".aside .profile").html(html); */
+	//$(".aside .profile img").attr('src', loginInfo.tc_avatar);
+	//$(".aside .profile h4").html(loginInfo.tc_name);
+
 	var loginInfo = $.cookie('logInfo');
-	console.log(loginInfo);
 	loginInfo = loginInfo && JSON.parse(loginInfo);
-	//console.log(loginInfo);
-	$(".aside .profile img").attr('src', loginInfo.tc_avatar);
-	$(".aside .profile h4").html(loginInfo.tc_name);
+	var tpl = '<div class="avatar img-circle"><img src="{{tc_avatar}}"></div><h4>{{tc_name}}</h4>';
+	var html = template.render(tpl, loginInfo);
+	$('.aside .profile').html(html);
 
 });
