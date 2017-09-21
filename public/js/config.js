@@ -6,7 +6,12 @@ require.config({
         template: 'artTemplate/template-web',
         cookie: 'jquery-cookie/jquery.cookie',
         login: '../js/login',
-        teacherlist: '../js/teacher-list'
+        teacherlist: '../js/teacher-list',
+        bootstrap: 'bootstrap/js/bootstrap'
+    },
+    shim: {
+        bootstrap: {
+            deps: ['jquery']
+        }
     }
-
 })
