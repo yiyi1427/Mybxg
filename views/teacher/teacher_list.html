@@ -24,7 +24,7 @@
                     <li class="active">讲师列表</li>
                 </ol>
                 <div class="page-title">
-                    <a href="./teacher_add.html" class="btn btn-success btn-sm pull-right">添加讲师</a>
+                    <a href="/teacher/teacher_add" class="btn btn-success btn-sm pull-right">添加讲师</a>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -75,7 +75,7 @@
 
 
     <script type="text/html" id="teacherTpl">
-        {{each list item i}}
+        {{each list as item i}}
         <tr>
             <td>{{i+1}}</td>
             <td>{{item.tc_name}}</td>
@@ -85,7 +85,7 @@
             <td>{{item.tc_cellphone}}</td>
             <td data-tc-id={{item.tc_id}} data-tc-status={{item.tc_status}}>
                 <a href="#teacherModal" class="btn btn-info btn-xs preview">查 看</a>
-                <a href="./teacher_add.html" class="btn btn-info btn-xs">编 辑</a>
+                <a href="/teacher/teacher_add?tc_id={{item.tc_id}}" class="btn btn-info btn-xs ">编 辑</a>
                 <a href="javascript:;" class="btn btn-warning btn-xs eou">{{if item.tc_status == 0}} 注 销 {{else}} 启 用 {{/if}}</a>
             </td>
         </tr>

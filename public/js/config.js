@@ -7,7 +7,9 @@ require.config({
         cookie: 'jquery-cookie/jquery.cookie',
         login: '../js/login',
         teacherlist: '../js/teacher-list',
-        bootstrap: 'bootstrap/js/bootstrap'
+        teacheradd: '../js/teacher-add',
+        bootstrap: 'bootstrap/js/bootstrap',
+        util: '../js/util'
     },
     shim: {
         bootstrap: {
