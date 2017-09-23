@@ -7,13 +7,14 @@ require.config({
         cookie: 'jquery-cookie/jquery.cookie',
         datepicker: 'bootstrap-datepicker/js/bootstrap-datepicker',
         language: 'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
-        form : 'jquery-form/jquery.form',
+        form: 'jquery-form/jquery.form',
         validate: 'validate/jquery-validate',
         login: '../js/login',
         teacherlist: '../js/teacher-list',
         teacheradd: '../js/teacher-add',
         bootstrap: 'bootstrap/js/bootstrap',
-        util: '../js/util'
+        util: '../js/util',
+        settings: '../js/settings'
     },
     shim: {
         bootstrap: {
