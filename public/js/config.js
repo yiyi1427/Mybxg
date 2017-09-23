@@ -5,6 +5,10 @@ require.config({
         jquery: 'jquery/jquery.min',
         template: 'artTemplate/template-web',
         cookie: 'jquery-cookie/jquery.cookie',
+        datepicker: 'bootstrap-datepicker/js/bootstrap-datepicker',
+        language: 'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
+        form : 'jquery-form/jquery.form',
+        validate: 'validate/jquery-validate',
         login: '../js/login',
         teacherlist: '../js/teacher-list',
         teacheradd: '../js/teacher-add',
@@ -13,6 +17,12 @@ require.config({
     },
     shim: {
         bootstrap: {
+            deps: ['jquery']
+        },
+        language: {
+            deps: ['jquery']
+        },
+        validate: {
             deps: ['jquery']
         }
     }
