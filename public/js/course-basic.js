@@ -1,4 +1,4 @@
-define(['jquery', 'template', 'util', 'ckeditor', 'validate', 'form'], function ($, template, util, CKEDITOR) {
+define(['jquery', 'template', 'util', 'ckeditor', 'validate', 'form', 'state'], function ($, template, util, CKEDITOR) {
     util.setMenu('/course/course_add');
     //获取标志位
     var flag = util.qs('flag');

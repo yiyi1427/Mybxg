@@ -2,7 +2,8 @@ define([
     'jquery',
     'template',
     'util',
-    'form'
+    'form',
+    'state'
 ], function ($, template, util) {
     util.setMenu(location.pathname);
     $("#courseBtn").on('click', function () {

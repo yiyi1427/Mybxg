@@ -4,7 +4,8 @@ define([
     'util',
     'uploadify',
     'form',
-    'jcrop'
+    'jcrop',
+    'state'
 ], function ($, template, util) {
     util.setMenu('/course/course_add');
     var csId = util.qs('cs_id');
@@ -38,7 +39,7 @@ define([
                 onUploadSuccess: function (a, b) {
                     var obj = JSON.parse(b);
                     $(".preview img").attr('src', obj.result.path);
-                    //cropImg();
+                    cropImg();
                     $("#cropBtn").text('保存图片').attr('data-flag', true);
                 }
             });
@@ -71,7 +72,9 @@ define([
             //封装图片裁剪的方法
             function cropImg() {
                 img.Jcrop({
-                        aspectRatio: 2
+                        aspectRatio: 2,
+                        boxWidth: 400
+
                     },
                     function () {
                         //销毁当前实例
@@ -95,6 +98,10 @@ define([
                         //创建一个选区
                         this.newSelection();
                         this.setSelect([x, y, w, h]);
+                        $(".jcrop-thumb").css({
+                            left: 0,
+                            top: 0
+                        });
                     });
                 //监控选区的变化
                 img.parent().on('cropstart cropmove cropend', function (a, b, c) {

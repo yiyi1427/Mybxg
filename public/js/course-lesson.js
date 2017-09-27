@@ -1,7 +1,8 @@
 define([
     'jquery',
     'template',
-    'util'
+    'util',
+    'state'
 ], function ($, template, util) {
     // 设置导航菜单选中
     util.setMenu('/course/course_add');

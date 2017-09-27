@@ -1,4 +1,4 @@
-define(['jquery', 'cookie'], function ($) {
+define(['jquery', 'cookie', 'state'], function ($) {
     $("#loginBtn").on('click', function () {
         $.ajax({
             type: 'post',

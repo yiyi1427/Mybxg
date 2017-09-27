@@ -1,4 +1,4 @@
-define(['jquery', 'template', 'util', 'bootstrap'], function ($, template, util) {
+define(['jquery', 'template', 'util', 'bootstrap', 'state'], function ($, template, util) {
     //设置导航键被选择
     util.setMenu(location.pathname);
     $.ajax({

@@ -1,4 +1,4 @@
-define(['jquery', 'template', 'ckeditor', 'region', 'datepicker', 'language', 'validate', 'form', 'uploadify'], function ($, template, CKEDITOR) {
+define(['jquery', 'template', 'ckeditor', 'region', 'datepicker', 'language', 'validate', 'form', 'uploadify', 'state'], function ($, template, CKEDITOR) {
     //调用接口获取个人信息
     $.ajax({
         type: 'get',
